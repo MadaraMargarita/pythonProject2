@@ -1,0 +1,23 @@
+#count_form {
+    background-color: #a7a4a8;
+    padding: 20px 20px 20px 20px;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 0, 0, 1);
+    background-color: #A5D8FF;
+    width: 50%;
+}
+
+h1 {
+    color: blue;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px; 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}

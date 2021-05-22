@@ -3,19 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Galvenā lapa</title>
+    <!--- lai dabūtu stilus --->
+    <link href="{{ url_for('static', filename='style//main.css') }}" rel="stylesheet"/>
 </head>
 
 <body>
 
-<form methods="POST">
+    <form method="POST">
         <label for="name">First Name:</label>
         <input type="text" name="name" id="name"><br><br>
-
         <label for="surname">Surname:</label>
         <input type="text" name="surname" id="surname"><br><br>
-
-        <input type="submit" values="Submit">
+        <input type="submit" value="Submit" name="Submit">
+        <input type="submit" value="View" name="View">
     </form>
+
+    <h1>Galvenā lapa</h1>
+    <!--- id - css būs ar # --->
+    <div id="count_form">
+        <p>Forma</p>
+
+        <form method="POST">
+            <label for="surname">Key:</label>
+            <input type="text" name="key" id="key"><br><br>
+            <input type="submit" value="Submit" name="Submit">
+        </form>
+    </div>
+
+    <div class="button">
+        <p>Link</p>
+    </div>
 
 </body>
 </html>
