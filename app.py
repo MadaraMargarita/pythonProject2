@@ -13,7 +13,7 @@ def hello_world():
     return 'Hello World!'
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/main', methods=['GET', 'POST'])
 def main():
     if request.method == 'POST':
         name = request.form['name']
@@ -30,23 +30,24 @@ def get_names():
         csv_reader = csv.DictReader(csv_file)
         data = {}
         for idx, row in enumerate(csv_reader):
-            #lai izņemtu tukšos ierakstus
+            # lai izņemtu tukšos ierakstus
             if row['name'] and row['surname']:
                 data[idx] = row
     return data
 
-#ja nebūs ievadīts Mara, tad nedos datus, bet atgriezīs tikai {}
 
-    #is_valid = False
-    #if 'username' in request.json:
-        #if request.json['username'] == 'Mara':
-            #is_valid = True
-    #with open('./static/data.csv') as csv_file:
-        #csv_reader = csv.DictReader(csv_file)
-        #data = {}
-        #for idx, row in enumerate(csv_reader):
-            #data[idx] = row
-        #return data if is_valid else {}
+# ja nebūs ievadīts Mara, tad nedos datus, bet atgriezīs tikai {}
+
+# is_valid = False
+# if 'username' in request.json:
+# if request.json['username'] == 'Mara':
+# is_valid = True
+# with open('./static/data.csv') as csv_file:
+# csv_reader = csv.DictReader(csv_file)
+# data = {}
+# for idx, row in enumerate(csv_reader):
+# data[idx] = row
+# return data if is_valid else {}
 
 
 @app.route('/view_data', methods=['GET'])
@@ -57,12 +58,12 @@ def view_data():
 
 @app.route('/get_count', methods=['POST'])
 def get_count():
-    #is_valid = False
-    #if 'key' in request.json:
-        #if request.json['key'] == key:
-            #is_valid = True
-    #data = str(len(get_names()))
-    #return data if is_valid else {'error': 'get the right key'}
+    # is_valid = False
+    # if 'key' in request.json:
+    # if request.json['key'] == key:
+    # is_valid = True
+    # data = str(len(get_names()))
+    # return data if is_valid else {'error': 'get the right key'}
     key = request.form['key']
     if key != 'secret':
         return {'error: get the right key'}
@@ -70,8 +71,13 @@ def get_count():
     return data
 
 
-#app.config['ENV'] = 'development'
-#app.config['DEBUG'] = True
+@app.route('/', methods=['GET'])
+def js_page():
+    return render_template('js_page.html')
+
+
+app.config['ENV'] = 'development'
+app.config['DEBUG'] = True
 #app.config['TESTING'] = True
 if __name__ == '__main__':
     app.run()
