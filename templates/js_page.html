@@ -7,8 +7,27 @@
 <body>
 
 <p id="demo">JavaScript var mainīt HTML saturu</p>
+<!---var mainīt saturu--->
 <button type="button" onclick='document.getElementById("demo").innerHTML="Cits saturs"'>
     Change Content</button>
+<!---var mainīt stilu--->
+<button type="button" onclick='document.getElementById("demo").style.fontSize="35px"'>Style</button><br>
+<!---var paslēpt vai parādīt saturu--->
+<button type="button" onclick='document.getElementById("demo").style.display="none"'>Paslēpt</button>
+<button type="button" onclick='document.getElementById("demo").style.display="block"'>Parādīt</button><br>
+
+<button type="button" onclick="changeContent()">funkcija</button>
+<button type="button" onclick="outsideFunction()">ārējā funkcija</button><br>
+<button type="button" onclick="print()">Print</button>
+
+<script>
+    function changeContent(){
+        document.getElementById("demo").innerHTML="Vēl cits saturs";
+    }
+</script>
+
+<!---ar script iekavām var importēt ārēju scriptu--->
+<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
 </html>
