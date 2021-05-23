@@ -30,7 +30,9 @@ def get_names():
         csv_reader = csv.DictReader(csv_file)
         data = {}
         for idx, row in enumerate(csv_reader):
-            data[idx] = row
+            #lai izņemtu tukšos ierakstus
+            if row['name'] and row['surname']:
+                data[idx] = row
     return data
 
 #ja nebūs ievadīts Mara, tad nedos datus, bet atgriezīs tikai {}
@@ -46,24 +48,30 @@ def get_names():
             #data[idx] = row
         #return data if is_valid else {}
 
+
+@app.route('/view_data', methods=['GET'])
+def view_data():
+    data = get_names()
+    return render_template('table.html', data_items=data)
+
+
 @app.route('/get_count', methods=['POST'])
 def get_count():
-    is_valid = False
-    if 'key' in request.json:
-        if request.json['key'] == 1234:
-            is_valid = True
-    data = str(len(get_names()))
-    return data if is_valid else {'error': 'get the right key'}
-
-    #key = request.form['key']
-    #if key != 'password':
-        #return 'error: get the right key'
+    #is_valid = False
+    #if 'key' in request.json:
+        #if request.json['key'] == key:
+            #is_valid = True
     #data = str(len(get_names()))
-    #return data
+    #return data if is_valid else {'error': 'get the right key'}
+    key = request.form['key']
+    if key != 'secret':
+        return {'error: get the right key'}
+    data = str(len(get_names()))
+    return data
 
 
-app.config['ENV'] = 'development'
-app.config['DEBUG'] = True
-app.config['TESTING'] = True
+#app.config['ENV'] = 'development'
+#app.config['DEBUG'] = True
+#app.config['TESTING'] = True
 if __name__ == '__main__':
     app.run()

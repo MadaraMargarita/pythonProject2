@@ -11,6 +11,16 @@ h1 {
     color: blue;
 }
 
+#signup_form {
+    background-color: #a7a4a8;
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 0, 0, 1);
+    background-color: #A5D8FF;
+    width: 50%;
+}
+
 .button {
     background-color: #4CAF50;
     border: none;
@@ -21,3 +31,55 @@ h1 {
     display: inline-block;
     font-size: 16px;
 }
+
+#customers {
+
+}
+
+/* tad, ja pele uzbrauc uz attiecīgajiem elementiem, tad parāda šo stilu */
+/* td šūna, tr rinda */
+#customers tr:hover {
+    background-color: rgb(158, 197, 223);
+}
+
+/* katru tr nto elem. / katram pāra skaitlim iedot šo stilu */
+customers tr:nth-child(even) {
+    background-color: #7fcc66;
+}
+
+#customers th {
+    padding-top: 12px;
+    padding-button: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+input {
+    font-size: 16px;
+    font-size: max(16px, 1em;
+    font-family: inherit;
+    padding: 0.25em 0.5em;
+    background-color: #fff;
+    border: 2px solid var(--input-border);
+    border-radius: 10px;
+}
+
+/*
+.outter.inner {
+    background-color: red;
+    padding: 10px;
+}
+*/
+
+.outter.big_red {
+    background-color: red;
+    padding: 10px;
+}
+
+.outter.big_blue {
+    background-color: blue;
+    padding: 10px;
+}
+
+/* CSS selectors */

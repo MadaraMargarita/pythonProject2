@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Datu tabulas lapa</title>
+    <!--- lai dabūtu stilus --->
+    <link href="{{ url_for('static', filename='style/main.css' }}" rel="stylesheet"/>
+</head>
+
+<body>
+    <h1>Datu tabulas lapa</h1>
+    <div class="button">
+        <a href="{{ url_for('main') }}">Go back</a>
+    </div>
+
+
+    <table id="customers">
+        <thead>
+            <tr>  <!--- ieraksts --->
+                <th>name</th>
+                <th>surname</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--- lai saprastu, ka būs cikls - {% --->
+            {% for row in data_items.values() %}
+                <tr>
+                    <td> {{ row['name'] }}</td>
+                    <td>{{ row['surname'] }}</td>
+                </tr>
+            {% endfor %}
+
+        <!---
+        {% if x == 0 %}
+            <h1>Vērtība 0</h1>
+        {% elif %}
+            <h1>Vērtība ir liela</h1>
+        {% endif %}
+        --->
+
+        </tbody>
+    </table>
+
+</body>
+</html>
