@@ -7,27 +7,47 @@
 <body>
 
 <p id="demo">JavaScript var mainīt HTML saturu</p>
-<!---var mainīt saturu--->
-<button type="button" onclick='document.getElementById("demo").innerHTML="Cits saturs"'>
-    Change Content</button>
-<!---var mainīt stilu--->
-<button type="button" onclick='document.getElementById("demo").style.fontSize="35px"'>Style</button><br>
-<!---var paslēpt vai parādīt saturu--->
-<button type="button" onclick='document.getElementById("demo").style.display="none"'>Paslēpt</button>
-<button type="button" onclick='document.getElementById("demo").style.display="block"'>Parādīt</button><br>
 
-<button type="button" onclick="changeContent()">funkcija</button>
-<button type="button" onclick="outsideFunction()">ārējā funkcija</button><br>
-<button type="button" onclick="print()">Print</button>
+<!--ctrl+/-->
+<!---var mainīt saturu--->
+<!---poga, uz kuras uzspiežot, izpildās ierakstītā darbība--->
+<button type="button" onclick='document.getElementById("demo").innerHTML="Cits saturs"'>
+    Change Content</button><br><br>
+
+<!---var mainīt stilu--->
+<button type="button" onclick='document.getElementById("demo").style.fontSize="35px"'>Style</button><br><br>
+
+<!---var paslēpt vai parādīt saturu--->
+<button type="button" onclick='document.getElementById("demo").style.display="none"'>Paslēpt</button><br><br>
+<button type="button" onclick='document.getElementById("demo").style.display="block"'>Parādīt</button><br><br>
+
+<button type="button" onclick="changeContent()">Funkcija</button><br><br>
+<button type="button" onclick="outsideFunction()">Ārējā funkcija</button><br><br>
+<button type="button" onclick="print()">Print</button><br>
 
 <script>
     function changeContent(){
         document.getElementById("demo").innerHTML="Vēl cits saturs";
     }
+    function audio_control(){
+        var player = document.getElementById("audio");
+        var playing = (player.paused ? 'Paused' : 'Playing');
+        alert('Audio was played ' + player.played.length + ' times and now is: ' + playing);
+    }
 </script>
 
 <!---ar script iekavām var importēt ārēju scriptu--->
 <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+
+<form id="audio_form" methods="POST" onsubmit="audioStats()">
+    <audio id="audio" controls>
+        <source src="{{ url_for('static', filename='starWars.wav') }}">
+    </audio>
+    <input type="submit" name="poga" value="Done"/>
+    <button type="button" onclick="audio_control()">Audio</button><br>
+</form>
+
+<button type="button" onclick="show_count()">Show count</button>
 
 </body>
 </html>

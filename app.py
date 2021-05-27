@@ -71,7 +71,7 @@ def get_count():
     return data
 
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET', 'POST'])
 def js_page():
     return render_template('js_page.html')
 
