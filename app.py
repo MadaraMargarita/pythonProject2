@@ -73,7 +73,16 @@ def get_count():
 
 @app.route('/', methods=['GET', 'POST'])
 def js_page():
+    if request.method == 'POST':
+        a = 0
     return render_template('js_page.html')
+
+
+@app.route('/test_jquery', methods=['GET'])
+def test_jquery():
+    if request.method == 'POST':
+        a = 0
+    return render_template('testing_jquery.html')
 
 
 app.config['ENV'] = 'development'

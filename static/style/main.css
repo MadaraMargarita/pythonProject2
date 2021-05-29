@@ -70,7 +70,7 @@ input {
     background-color: red;
     padding: 10px;
 }
-*/
+
 
 .outter.big_red {
     background-color: red;
@@ -81,5 +81,14 @@ input {
     background-color: blue;
     padding: 10px;
 }
+*/
+
+#box {
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+}
+
+
 
 /* CSS selectors */
