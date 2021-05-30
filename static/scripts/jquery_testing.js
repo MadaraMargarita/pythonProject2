@@ -1,11 +1,14 @@
 $(document).ready(function() {
     console.log("ready!");
 
+
     //$("#box").click(function(){
         //$("#tekstins").hide()
         //$("#tekstins").toggle(); /* uzspiež pazūd, uzspiež parādās */
         // $("h1").hide(2000).delay(1000).show(2000);
     //});
+
+
 
     $("#box").mouseenter(function(){
         $(this).css('background', 'red');
@@ -18,6 +21,8 @@ $(document).ready(function() {
     $("#box").dblclick(function(){
         $(this).css('background', 'green');
     });
+
+
 
     //$("#box").hover(function(){
         //$("#tekstins").toggle(); /* uzspiež pazūd, uzspiež parādās */
@@ -47,8 +52,13 @@ $(document).ready(function() {
         //}
     //});
 
+
+
     //$("h1").hide(2000).delay(1000).show(2000);
+    $("h2").hide(100).show(1000);
     $("h1").hide(100).show(2000);
+
+
 
    //Ajax
    //setInterval(function(){
