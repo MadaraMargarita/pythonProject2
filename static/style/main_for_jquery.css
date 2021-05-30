@@ -1,0 +1,34 @@
+html{
+    background: url('http://i.stack.imgur.com/jGlzr.png') no-repeat 0 0 scroll;
+    background-color:#0C0C0C;
+    background-size: 100% 100%;
+    height:100%;
+    width:100%;
+}
+
+#liels_teksts {
+    color: black;
+    text-align: center;
+    font-family: Papyrus;
+}
+
+#tekstins {
+    font-weight: bold;
+}
+
+#box {
+    background-color: darkblue;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+	padding: 10px;
+	border-radius: 25px;
+	font-size: 10px;
+	text-align: center;
+}
+
+#customer {
+    color: black;
+    text-align: center;
+    font-family: Papyrus;
+}

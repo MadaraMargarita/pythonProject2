@@ -4,27 +4,46 @@
     <meta charset="UTF-8">
     <title>Galvenā lapa</title>
     <!--- lai dabūtu stilus --->
-    <link href="{{ url_for('static', filename='style/main.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='style/main_for_jquery.css') }}" type="text/css" rel="stylesheet"/>
     <script src="{{ url_for('static', filename='scripts/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/jquery_testing.js') }}"></script>
 </head>
 
 <body>
+    <div id="customer">
+        <h2>HELLO</h2>
+    </div>
+
     <div id="liels_teksts">
-        <h1>Header h1</h1>
+        <h1>CUSTOMER</h1>
     </div>
 
     <div id="tekstins">
-        TEXT
+        TEXT TEXT TEXT
     </div>
 
     <div id="box">
-        BOX, kurš nerādās
+        click there to change this color!
     </div>
 
-    <div id="uid">
+    <!---<div id="uid">
         <p>Nothing</p>
-    </div>
+    </div>--->
+
+    <h2 onclick="showCoords(event)">
+        Click this heading to get the x (horizontal) and y (vertical) coordinates of the mouse pointer when it was clicked.
+    </h2>
+
+    <p id="demo"></p>
+
+    <script>
+        function showCoords(event) {
+            var x = event.clientX;
+            var y = event.clientY;
+            var coords = "X coords: " + x + ", Y coords: " + y;
+            document.getElementById("demo").innerHTML = coords;
+        }
+    </script>
 
 </body>
 </html>
